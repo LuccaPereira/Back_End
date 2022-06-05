@@ -1,4 +1,4 @@
-import { Payment } from "./structurs";
+import {Payment} from "./structurs";
 
 /**
  * Gera um numero aleatorio inteiro entre
@@ -35,7 +35,7 @@ export function GenerateTxIdStr() {
  * @param {payment} d - Objeto produto a ser validado.
  * @return {number} - Retorna 0 se válido ou o código de erro.
  **/
-export function Analyze(valor: string, qtdeTempo: string, placa: string, pix: string): number {
+export function Analyze(valor: string, qtdeTempo: string, placa: string, pix: string) {
   if (!valor) {
     return 1;
   }
@@ -83,11 +83,11 @@ export function MensagemErro(code: number): string {
 }
 
 export function CalcValorPagar(PaymentData: Payment): Payment {
-  let ret = PaymentData;
-  if(PaymentData.qtdeTempo > 4 ){
+  const ret = PaymentData;
+  if (PaymentData.qtdeTempo > 4 ) {
     const pagarPorHora = 0;
-    const valorDahora = 10;    
-    let precoAtraso = PaymentData.valor + (pagarPorHora * valorDahora);
+    const valorDahora = 10;
+    const precoAtraso = PaymentData.valor + (pagarPorHora * valorDahora);
     return precoAtraso;
   }
 
