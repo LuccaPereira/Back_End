@@ -7,7 +7,7 @@ import {Payment} from "./structurs";
  * @param {number} max - Maximo
  * @return {number} um número
  */
-export function GetRandomIntInclusive(min: number, max: number) {
+export function getRandomIntInclusive(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -23,7 +23,7 @@ export function GenerateTxIdStr() {
   let c = 0;
   let txId = "";
   while (c < 64) {
-    txId += alfabeto.charAt(GetRandomIntInclusive(0, l));
+    txId += alfabeto.charAt(getRandomIntInclusive(0, l));
     c = c + 1;
   }
   return txId;
@@ -32,9 +32,12 @@ export function GenerateTxIdStr() {
  * Função que analisa se um produto é válido para ser gravado no banco.
  * Exemplo de validação na entrada. Complemente com as regras que achar
  * importante.
- * @param {payment} d - Objeto produto a ser validado.
+ * @param {payment} valor - Objeto produto a ser validado.
+ * @param {payment} qtdeTempo - Fvck jsdoc
+ * @param {payment} placa - Obrigatorio
+ * @param {payment} pix - jsdoc
  * @return {number} - Retorna 0 se válido ou o código de erro.
- **/
+ */
 export function Analyze(valor: string, qtdeTempo: string, placa: string, pix: string) {
   if (!valor) {
     return 1;

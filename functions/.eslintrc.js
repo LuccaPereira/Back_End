@@ -29,5 +29,8 @@ module.exports = {
     "quotes": ["error", "double"],
     "import/no-unresolved": 0,
     "linebreak-style": 0,
+    "max-len": 0,
+    "require-jsdoc": 0,
+    "@typescript-eslint/no-explicit-any": ["off"],
   },
 };
