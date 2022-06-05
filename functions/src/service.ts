@@ -6,7 +6,6 @@ import {Analyze as analyzi, GenerateTxIdStr as generateTxIdStr, getRandomIntIncl
 const app = admin.initializeApp();
 const db = app.firestore();
 const PaymentCollection = db.collection("Pagamento");
-
 /* const PaymentRequired = db.collection("PagamentoDoResto"); */
 
 export const addPagamento = functions
